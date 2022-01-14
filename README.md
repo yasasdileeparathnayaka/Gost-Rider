@@ -3,8 +3,8 @@
 [![Profile views](https://komarev.com/ghpvc/?username=king-ravana-SL&label=Profile%20Views&color=red)](https://github.com/yasasdileepa/slDILEEPA)
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%23F72194&size=15&lines=Hi+im+Maraya+whatsapp+bot+coded+by+yasas+dileepa;You+can+made+Maraya+whatsapp+bot;And+funy+momen;Thanks+to+yasas+dileepa;And+adisha+lakshitha+%2C+KG+amda+%2C+MR+dina+and+Black+Amda;%E2%9D%A4%EF%B8%8F%F0%9F%A4%B4%E2%9D%A4%EF%B8%8F++;%F0%9F%A4%B4King+Maraya%F0%9F%A4%B4)](https://git.io/typing-svg)
-  <img src="https://i.ibb.co/99Nfwfy/a62902c0458a23d705492bb701371a43-cool-wallpapers-for-iphone-wallpaper-for-iphone.jpg" width="300" height="300">      
-  <h1>maraya 😼</h1>  
+  <img src="https://github.com/yasasdileeparathnayaka/Gost-Rider/blob/main/media/gif/IMG-20220114-WA0037.jpg" width="300" height="300">      
+  <h1>Gost_Rider 😼</h1>  
        | © | MADE BY DILEEPA |
 
 ## Visit our official website to install the Whatsapp Bot : QR Code generator and full instructions available there. <div> 	<a href="https://yasasdileepa.github.io/Maraya/"> <img src="https://i.ibb.co/dr27VyW/59060c190cbeef0acff9a657.png" width="200"></br></a>
@@ -28,8 +28,8 @@ Click Whatsapp logo to Join Support Group 👇
 	
   </div>
   
-  ## 🐱‍👤මාරයා bot විශේෂාංග
-🐱‍👤මාරයා bot විශේෂාංග මෙන්න.
+  ## 🐱‍👤රයිඩර් bot විශේෂාංග
+🐱‍👤රයිඩ bot විශේෂාංග මෙන්න.
 <a href="https://gist.github.com/yasasdileepa/7a3bc29b084c3347006a8a69b532287a">
     <img src="https://img.shields.io/badge/Click%20here-purple&style=plastic">
 ### HOW TO MADE THIS BOT CLICK THIS LOGO 👇
@@ -53,4 +53,6 @@ Click Whatsapp logo to Join Support Group 👇
 	<img scr =https://i.ibb.co/110644-Whats-App-Business.jpg"width="100"height="100"alt="black wampare"></a></td><td><a href="httsp://github.com/kgamdaofficial">black wampare </a></br>(meneger)</td>       
 
 												
-```මන් යසස් දිලිප මන් සහා මගෙ ටිම් එකට ඔයාලාට මෙ හදුන්වා දි තිබෙන්නෙ මාරයා whatsapp bot ය මෙ බොට් install කර ගැනිම සදහා අන්අය යම් කිසි බොයක් දක්වයි මෙ බොට් සදහා කිසි බියක් නොදක්වන්න මෙය සාමකාමි බොටෙක් කියා කාරුනික වන්න``` 
+```මන් යසස් දිලිප මන් සහා මගෙ ටිම් එකට ඔයාලාට මෙ හදුන්වා දි තිබෙන්නෙ මාරයා whatsapp bot ය
+ මෙ බොට් install කර ගැනිම සදහා අන්අය යම් කිසි බොයක් දක්වයි මෙ බොට් සදහා කිසි බියක් නොදක්වන්න
+ මෙය සාමකාමි බොටෙක් කියා කාරුනික වන්න``` 
