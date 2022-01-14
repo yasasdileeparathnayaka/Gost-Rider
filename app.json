@@ -1,6 +1,6 @@
 {
-    "name": "Maraya Bot",
-    "description": "Maraya is a chat bot for WhatsApp.",
+    "name": "Gost Rider",
+    "description": "Gist Rider is a chat bot for WhatsApp.",
     "logo": "https://telegra.ph/file/24cacd9938446a38180fd.png",
     "keywords": ["whatsapp", "userbot", "Asena", "WhatsAsena", "bot", "api", "ai", "Maraya"],
     "repository": "https://github.com/yasasdileepa/Maraya",
@@ -8,7 +8,7 @@
     "success_url": "https://chat.whatsapp.com/Hm79J2saLrvRTkq",
     "stack": "container",
     "env": {
-        "MARAYA_SESSION": {
+        "RIDER_SESSION": {
             "description": "Qr කේතය scan කළ පසුව ලැබෙන කේතයන්",
             "required": true
         },
