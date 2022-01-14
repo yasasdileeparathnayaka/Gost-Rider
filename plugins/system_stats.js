@@ -1,85 +1,76 @@
-/* Copyright (C) 2020 TOXIC DEVIL
-
-CODDED BY TOXIC DEVIL
-
+/*Copyright (C) 2021 yasas.
 Licensed under the  GPL-3.0 License;
-
 you may not use this file except in compliance with the License.
-WhatsAsenaPublic - TOXIC DEVIL
-*/
 
-const Asena = require('../events');
-const {MessageType, MessageOptions, Mimetype} = require('@adiwajshing/baileys');
+const rider = require('rider-public');
+const Amdi = QueenAmdi.events
+const Build = QueenAmdi.build
+const {MessageType, MessageOptions, Mimetype} = require('@blackamda/queenamdi-web-api');
 const {spawnSync} = require('child_process');
-const Config = require('../config');
 const chalk = require('chalk');
 const axios = require('axios');
+const fs = require('fs');
+let Work_Mode = Build.WORKTYPE == 'public' ? false : true
 
 const Language = require('../language');
 const Lang = Language.getString('system_stats');
 
+var SYSDTXT = ''
+if (Build.LANG == 'SI') SYSDTXT = '💻 පද්ධතිය'
+if (Build.LANG == 'EN') SYSDTXT = '💻 sytem'
 
-if (Config.WORKTYPE == 'private') {
+var VER = ''
+if (Build.LANG == 'SI') VER = '🧬 Version'
+if (Build.LANG == 'EN') VER = '🧬 Version'
 
-    Asena.addCommand({pattern: 'alive', fromMe: true, desc: Lang.ALIVE_DESC}, (async (message, match) => {
+var MSG = ''
+if (Build.ALIVEMSG == 'default') MSG = '```Hey There! Bot Online now. 🇱🇰🎭```\n\n*Developer:* ```Yasas dileepa```\n\n*Youtube channel :* https://tinyurl.com/y4y4wnyp *\n\n```Thank You For Using GOST RIDER🇱🇰```'
+else MSG = Build.ALIVEMSG
 
-        if (Config.ALIVEMSG == 'default') {
-            
-            var image = await axios.get (Config.ALIVE_LOGO, {responseType: 'arraybuffer'})
-       
-        await message.client.sendMessage (message.jid, Buffer.from (image.data), MessageType.image, {mimetype: Mimetype.png, caption: "```😈💀 Hey There! I'm Online now. 😉```\n\n*Version:* ```v1.5 - Stable```\n\n*Developer:* ```yasas dileepa```\n\n\n\n*channel https://www.youtube.com/channel/UCYpzhRBGT4x3avaE3DR5_jA :* \n\n```Thank You For Using maraya😈```"})
 
+Amdi.operate({pattern: 'alive', fromMe: Work_Mode, desc: Lang.ALIVE_DESC,  deleteCommand: false}, (async (message, match) => {
+    await QueenAmdi.amdi_setup()
+    var logo = await axios.get (Build.ALIVE_LOGO, {responseType: 'arraybuffer'})
+    var PIC = Buffer.from(logo.data)
+
+    const media = await message.client.prepareMessage(message.jid, PIC, MessageType.image, { thumbnail: PIC })
+
+    var BUTTHANDLE = '';
+    if (/\[(\W*)\]/.test(Build.HANDLERS)) {
+        BUTTHANDLE = Build.HANDLERS.match(/\[(\W*)\]/)[1][0];
+    } else {
+        BUTTHANDLE = '.';
     }
-    else {
-            
-            var image = await axios.get (Config.ALIVE_LOGO, {responseType: 'arraybuffer'})
-       
-        await message.client.sendMessage (message.jid, Buffer.from (image.data), MessageType.image, {mimetype: Mimetype.png, caption: Config.ALIVEMSG + '\n\n*Copyright © 2021 | ☠ Maraya ☠ *' })
-     }
-    }));
-
-    Asena.addCommand({pattern: 'sysd', fromMe: true, desc: Lang.SYSD_DESC}, (async (message, match) => {
-
-        if (message.jid === '905524317852-1612300121@g.us') {
-
-            return;
-        }
-
-        const child = spawnSync('neofetch', ['--stdout']).stdout.toString('utf-8')
-        await message.sendMessage(
-            '```' + child + '```', MessageType.text
-        );
-    }));
-}
-else if (Config.WORKTYPE == 'public') {
-
-    Asena.addCommand({pattern: 'alive', fromMe: false, desc: Lang.ALIVE_DESC}, (async (message, match) => {
-
-        if (Config.ALIVEMSG == 'default') {
-            
-            var image = await axios.get (Config.ALIVE_LOGO, {responseType: 'arraybuffer'})
-       
-        await message.client.sendMessage (message.jid, Buffer.from (image.data), MessageType.image, {mimetype: Mimetype.png, caption: "```😈💀 Hey There! I'm Online now. 😉```\n\n*Version:* ```v1.5 - Stable```\n\n*Developer:* ```Yasas dileepa ```\n\n\n\n*channel :*https://www.youtube.com/channel/UCYpzhRBGT4x3avaE3DR5_jA \n\n```Thank You For Using maraya😈```"})
-
+        
+    const buttons = [
+        {buttonId: BUTTHANDLE + 'qaversion', buttonText: {displayText: VER }, type: 1},
+        {buttonId: BUTTHANDLE + 'qasysstats', buttonText: {displayText: SYSDTXT }, type: 1}
+    ]
+    const buttonMessage = {
+        contentText: MSG,
+        footerText: ' © Gost Rider',
+        buttons: buttons,
+        headerType: 4,
+        imageMessage: media.message.imageMessage    
     }
-    else {
-            
-            var image = await axios.get (Config.ALIVE_LOGO, {responseType: 'arraybuffer'})
-       
-        await message.client.sendMessage (message.jid, Buffer.from (image.data), MessageType.image, {mimetype: Mimetype.png, caption: Config.ALIVEMSG + '\n\n*Copyright © 2021 | ☠ Maraya ☠ |*' })
-     }
-    }));
+    await message.client.sendMessage(message.jid, buttonMessage, MessageType.buttonsMessage);
+}))
 
-    Asena.addCommand({pattern: 'sysd', fromMe: false, desc: Lang.SYSD_DESC}, (async (message, match) => {
+Amdi.operate({pattern: 'qasysstats', fromMe: Work_Mode, desc: Lang.SYSD_DESC, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
+    await QueenAmdi.amdi_setup()
+    const child = spawnSync('neofetch', ['--stdout']).stdout.toString('utf-8')
+    await message.sendMessage(
+        '```' + child + '```', MessageType.text, {quoted: message.data}
+    );
+}));
 
-        if (message.jid === '905524317852-1612300121@g.us') {
-
-            return;
-        }
-
-        const child = spawnSync('neofetch', ['--stdout']).stdout.toString('utf-8')
-        await message.sendMessage(
-            '```' + child + '```', MessageType.text
-        );
-    }));
-}
+Amdi.operate({pattern: 'qaversion', fromMe: Work_Mode, desc: Lang.BOT_V, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
+    await RIDER.rider_setup()
+    await message.client.sendMessage(message.jid, 
+        `*🧬 Gost_Rider Version 🧬*\n\n` + 
+        '```Installed version :```\n' +
+        Lang.version + 
+        `\n\nCheck official website : www.github.com/yasasdileepa/`
+   , MessageType.text, {quoted: message.data});
+    
+}));
